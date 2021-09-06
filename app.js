@@ -180,7 +180,7 @@ app.post('/send-message', [
   if (!errors.isEmpty()) {
     return res.status(422).json({
       status: false,
-      message: errors.mapped()
+      message: '422 '+errors.mapped()
     });
   }
 
@@ -204,7 +204,7 @@ app.post('/send-message', [
   }).catch(err => {
     res.status(500).json({
       status: false,
-      response: err
+      response: '500 '+err
     });
   });
 });
