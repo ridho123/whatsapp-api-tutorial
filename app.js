@@ -180,7 +180,7 @@ app.post('/send-message', [
   if (!errors.isEmpty()) {
     return res.status(422).json({
       status: false,
-      message: '422 '+errors.mapped()
+      message: 'Err: 422 '+ JSON.stringify(errors.mapped())
     });
   }
 
