@@ -15,14 +15,14 @@
   "author": "Nur Muhammad",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.20.0",
+     "axios": "^0.20.0",
     "express": "^4.17.1",
-    "express-fileupload": "^1.2.0",
-    "express-validator": "^6.9.2",
+    "express-fileupload": "^1.2.1",
+    "express-validator": "^6.10.0",
     "http": "0.0.1-security",
-    "mime-types": "^2.1.32",
+    "pg": "^8.5.1",
     "qrcode": "^1.4.4",
-    "socket.io": "2.3.0",
+    "socket.io": "2.3.0",    
     "whatsapp-web.js": "latest"
   },
   "devDependencies": {
