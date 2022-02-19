@@ -60,8 +60,8 @@ const db = require('./helpers/db.js');
         axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/678/tanggal/2022-02-19')
         .then(res => {
           pesan = "Jadwal Shalat Tangerang Selatan\n"+"Tanggal : "+res.data.query.tanggal+"\n"+"imsak : "+res.data.jadwal.data.imsak+"\n"+"terbit : "++res.data.jadwal.data.terbit+"\n"+"subuh : "++res.data.jadwal.data.subuh+"\n"+"dhuha : "++res.data.jadwal.data.dhuha+"\n"+"dzuhur : "++res.data.jadwal.data.dzuhur+"\n"+"ashar : "++res.data.jadwal.data.ashar+"\n"+"maghrib : "++res.data.jadwal.data.maghrib+"\n"+"isya : "++res.data.jadwal.data.isya+"\n"
-           
-          msg.reply(res.data.query.kota);
+          msg.reply(pesan); 
+          //msg.reply(res.data.query.kota);
         })
         .catch(error => {
           msg.reply('Error');
