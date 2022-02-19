@@ -57,7 +57,9 @@ const db = require('./helpers/db.js');
     } else if (result == 'GOOD MORNING' || result == 'SELAMAT PAGI') {
       msg.reply('selamat pagi');
     } else if(result=='SHALAT TANGSEL') {
-        axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/678/tanggal/2022-02-19')
+        var today = new Date().toISOString().substring(0, 10);
+        
+        axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/678/tanggal/'+today)
         .then(res => {
           pesan = "Jadwal Shalat Tangerang Selatan\n"+"Tanggal : "+res.data.query.tanggal+"\n"+"imsak : "+res.data.jadwal.data.imsak+"\n"+"terbit : "++res.data.jadwal.data.terbit+"\n"+"subuh : "+res.data.jadwal.data.subuh+"\n"+"dhuha : "+res.data.jadwal.data.dhuha+"\n"+"dzuhur : "+res.data.jadwal.data.dzuhur+"\n"+"ashar : "+res.data.jadwal.data.ashar+"\n"+"maghrib : "+res.data.jadwal.data.maghrib+"\n"+"isya : "+res.data.jadwal.data.isya+"\n"
           msg.reply(pesan); 
@@ -67,7 +69,8 @@ const db = require('./helpers/db.js');
           msg.reply('Error');
         });
      } else if(result=='SHALAT PEKANBARU') {
-        axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/597/tanggal/2022-02-19')
+         var today = new Date().toISOString().substring(0, 10);
+        axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/597/tanggal/'++today)
         .then(res => {
           pesan = "Jadwal Shalat Tangerang Selatan\n"+"Tanggal : "+res.data.query.tanggal+"\n"+"imsak : "+res.data.jadwal.data.imsak+"\n"+"terbit : "++res.data.jadwal.data.terbit+"\n"+"subuh : "+res.data.jadwal.data.subuh+"\n"+"dhuha : "+res.data.jadwal.data.dhuha+"\n"+"dzuhur : "+res.data.jadwal.data.dzuhur+"\n"+"ashar : "+res.data.jadwal.data.ashar+"\n"+"maghrib : "+res.data.jadwal.data.maghrib+"\n"+"isya : "+res.data.jadwal.data.isya+"\n"
           msg.reply(pesan); 
