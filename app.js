@@ -57,12 +57,19 @@ const db = require('./helpers/db.js');
     } else if (result == 'GOOD MORNING' || result == 'SELAMAT PAGI') {
       msg.reply('selamat pagi');
     } else if(result=='JADWAL') {
-        axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/678/tanggal/2022-02-19').then(resp => {
-          msg.reply(resp.data);
+        axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/678/tanggal/2022-02-19')
+        .then(res => {
+          msg.reply('OK');
+        })
+        .catch(error => {
+          msg.reply('Error');
+        });
+        //axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/678/tanggal/2022-02-19').then(resp => {
+         // msg.reply(resp.data);
             //jadwal=resp.data;
             // pesan = "Jadwal Shalat Tangerang Selatan\n"+"Tanggal : "+jadwal.data.tanggal+"\n"+"imsak : "+jadwal.data.imsak+"\n"+"terbit : "+jadwal.data.terbit+"\n"+"subuh : "+jadwal.data.subuh+"\n"+"dhuha : "+jadwal.data.dhuha+"\n"+"dzuhur : "+jadwal.data.dzuhur+"\n"+"ashar : "+jadwal.data.ashar+"\n"+"maghrib : "+jadwal.data.maghrib+"\n"+"isya : "+jadwal.data.isya+"\n"
             // msg.reply(pesan);
-        });
+        //});
         
      
     } else if (result == '!groups') {
