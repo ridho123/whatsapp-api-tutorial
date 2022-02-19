@@ -51,7 +51,7 @@ const db = require('./helpers/db.js');
   });
 
   client.on('message1', msg => {
-    let result = msg.body.toUpperCase();
+     result = msg.body.toUpperCase();
     if (result == '!PING') {
       msg.reply('pong');
     } else if (result == 'GOOD MORNING' || result == 'SELAMAT PAGI') {
