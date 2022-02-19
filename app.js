@@ -1,4 +1,5 @@
 const { Client, MessageMedia } = require('whatsapp-web.js');
+const moment = require('moment');
 const express = require('express');
 const { body, validationResult } = require('express-validator');
 const socketIO = require('socket.io');
@@ -50,11 +51,19 @@ const db = require('./helpers/db.js');
   });
   
   client.on('message', msg => {
-    if (msg.body == '!ping') {
+    let result = msg.body.toUpperCase();
+    if (result == '!PING') {
       msg.reply('pong');
-    } else if (msg.body == 'good morning') {
+    } else if (result == 'GOOD MORNING' || result == 'SELAMAT PAGI') {
       msg.reply('selamat pagi');
-    } else if (msg.body == '!groups') {
+    } else if(result=='!JADWAL') {
+      var todayDate = new Date().toISOString().slice(0, 10);
+       const respons = await axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/678/tanggal/'+todayDate)
+       const { jadwal } = respons.data
+       pesan = "Jadwal Shalat Tangerang Selatan\n"+"Tanggal : "+jadwal.data.tanggal+"\n"+"imsak : "+jadwal.data.imsak+"\n"+"terbit : "+jadwal.data.terbit+"\n"+"subuh : "+jadwal.data.subuh+"\n"+"dhuha : "+jadwal.data.dhuha+"\n"+"dzuhur : "+jadwal.data.dzuhur+"\n"+"ashar : "+jadwal.data.ashar+"\n"+"maghrib : "+jadwal.data.maghrib+"\n"+"isya : "+jadwal.data.isya+"\n"
+        
+      msg.reply(pesan);
+    } else if (result == '!groups') {
       client.getChats().then(chats => {
         const groups = chats.filter(chat => chat.isGroup);
   
