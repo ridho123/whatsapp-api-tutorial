@@ -91,7 +91,7 @@ const db = require('./helpers/db.js');
            //  msg.reply(pesan);
          // msg.reply("OK"+JSON.stringify(res.data)); 
         //  msg.reply(res); 
-          msg.reply(res.data.id); 
+          msg.reply(res.data.data.id); 
          // msg.reply(res.data.update.penambahan.jumlah_positif);
         })
         .catch(error => {
