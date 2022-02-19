@@ -59,18 +59,24 @@ const db = require('./helpers/db.js');
     } else if(result=='JADWAL') {
         axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/678/tanggal/2022-02-19')
         .then(res => {
+          pesan = "Jadwal Shalat Tangerang Selatan\n"+"Tanggal : "+res.data.query.tanggal+"\n"+"imsak : "+res.data.jadwal.data.imsak+"\n"+"terbit : "++res.data.jadwal.data.terbit+"\n"+"subuh : "++res.data.jadwal.data.subuh+"\n"+"dhuha : "++res.data.jadwal.data.dhuha+"\n"+"dzuhur : "++res.data.jadwal.data.dzuhur+"\n"+"ashar : "++res.data.jadwal.data.ashar+"\n"+"maghrib : "++res.data.jadwal.data.maghrib+"\n"+"isya : "++res.data.jadwal.data.isya+"\n"
+           
           msg.reply(res.data.query.kota);
         })
         .catch(error => {
           msg.reply('Error');
         });
-        //axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/678/tanggal/2022-02-19').then(resp => {
-         // msg.reply(resp.data);
-            //jadwal=resp.data;
-            // pesan = "Jadwal Shalat Tangerang Selatan\n"+"Tanggal : "+jadwal.data.tanggal+"\n"+"imsak : "+jadwal.data.imsak+"\n"+"terbit : "+jadwal.data.terbit+"\n"+"subuh : "+jadwal.data.subuh+"\n"+"dhuha : "+jadwal.data.dhuha+"\n"+"dzuhur : "+jadwal.data.dzuhur+"\n"+"ashar : "+jadwal.data.ashar+"\n"+"maghrib : "+jadwal.data.maghrib+"\n"+"isya : "+jadwal.data.isya+"\n"
-            // msg.reply(pesan);
-        //});
-        
+     } else if(result=='JADWALPEKANBARU') {
+        axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/597/tanggal/2022-02-19')
+        .then(res => {
+          pesan = "Jadwal Shalat Pekanbaru\n"+"Tanggal : "+res.data.query.tanggal+"\n"+"imsak : "+res.data.jadwal.data.imsak+"\n"+"terbit : "++res.data.jadwal.data.terbit+"\n"+"subuh : "++res.data.jadwal.data.subuh+"\n"+"dhuha : "++res.data.jadwal.data.dhuha+"\n"+"dzuhur : "++res.data.jadwal.data.dzuhur+"\n"+"ashar : "++res.data.jadwal.data.ashar+"\n"+"maghrib : "++res.data.jadwal.data.maghrib+"\n"+"isya : "++res.data.jadwal.data.isya+"\n"
+           
+          msg.reply(res.data.query.kota);
+        })
+        .catch(error => {
+          msg.reply('Error');
+        });
+          
      
     } else if (result == '!groups') {
       client.getChats().then(chats => {
