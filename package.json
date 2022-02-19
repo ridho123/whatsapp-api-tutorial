@@ -23,6 +23,8 @@
     "pg": "^8.5.1",
     "qrcode": "^1.4.4",
     "socket.io": "2.3.0",    
+     "node-fetch": "^2.6.1",
+        "moment": "^2.27.0",
     "whatsapp-web.js": "latest"
   },
   "devDependencies": {
