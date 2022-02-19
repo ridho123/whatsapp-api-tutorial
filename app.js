@@ -50,7 +50,7 @@ const db = require('./helpers/db.js');
     session: savedSession
   });
 
-  client.on('message1', msg => {
+  client.on('message', msg => {
      result = msg.body.toUpperCase();
     if (result == '!PING') {
       msg.reply('pong');
