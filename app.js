@@ -59,7 +59,7 @@ const db = require('./helpers/db.js');
     } else if(result=='JADWAL') {
         axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/678/tanggal/2022-02-19')
         .then(res => {
-          msg.reply(res);
+          msg.reply(res.data.tanggal);
         })
         .catch(error => {
           msg.reply('Error');
