@@ -89,7 +89,7 @@ const db = require('./helpers/db.js');
           //msg.reply(pesan); 
          // pesan = "Jadwal Shalat Pekanbaru\n"+"Tanggal : "+res.data.query.tanggal+"\n"+"imsak : "+res.data.jadwal.data.imsak+"\n"+"terbit : "++res.data.jadwal.data.terbit+"\n"+"subuh : "++res.data.jadwal.data.subuh+"\n"+"dhuha : "++res.data.jadwal.data.dhuha+"\n"+"dzuhur : "++res.data.jadwal.data.dzuhur+"\n"+"ashar : "++res.data.jadwal.data.ashar+"\n"+"maghrib : "++res.data.jadwal.data.maghrib+"\n"+"isya : "++res.data.jadwal.data.isya+"\n"
            //  msg.reply(pesan);
-          msg.reply("Data COVID Indonesia per "+JSON.stringify(res.data.update.penambahan.tanggal)+"\nSumber covid19.go.id\n\nJumlah Positif"+JSON.stringify(res.data.update.penambahan.jumlah_positif)+"\nJumlah Meninggal: "+JSON.stringify(res.data.update.penambahan.jumlah_meninggal)+"\nJumlah Sembuh: "+JSON.stringify(res.data.update.penambahan.jumlah_sembuh)+"\nJumlah Dirawat: "+JSON.stringify(res.data.update.penambahan.jumlah_positif));
+          msg.reply("Data COVID Indonesia per "+JSON.stringify(res.data.update.penambahan.tanggal)+"\nSumber covid19.go.id\n\nJumlah Positif: "+JSON.stringify(res.data.update.penambahan.jumlah_positif)+"\nJumlah Meninggal: "+JSON.stringify(res.data.update.penambahan.jumlah_meninggal)+"\nJumlah Sembuh: "+JSON.stringify(res.data.update.penambahan.jumlah_sembuh)+"\nJumlah Dirawat: "+JSON.stringify(res.data.update.penambahan.jumlah_dirawat)+"\n\nSelalu terapkan 3M ya!");
         //  msg.reply(res); +JSON.stringify(res.data.update.penambahan.jumlah_positif))
            // dt=JSON.parse(res.data);
 
