@@ -70,9 +70,9 @@ const db = require('./helpers/db.js');
         });
      } else if(result=='SHALAT PEKANBARU') {
          var today = new Date().toISOString().substring(0, 10);
-        axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/597/tanggal/'++today)
+        axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/597/tanggal/'+today)
         .then(res => {
-          pesan = "Jadwal Shalat Tangerang Selatan\n"+"Tanggal : "+res.data.query.tanggal+"\n"+"imsak : "+res.data.jadwal.data.imsak+"\n"+"terbit : "+res.data.jadwal.data.terbit+"\n"+"subuh : "+res.data.jadwal.data.subuh+"\n"+"dhuha : "+res.data.jadwal.data.dhuha+"\n"+"dzuhur : "+res.data.jadwal.data.dzuhur+"\n"+"ashar : "+res.data.jadwal.data.ashar+"\n"+"maghrib : "+res.data.jadwal.data.maghrib+"\n"+"isya : "+res.data.jadwal.data.isya+"\n"
+          pesan = "Jadwal Shalat Pekanbaru\n"+"Tanggal : "+res.data.query.tanggal+"\n"+"imsak : "+res.data.jadwal.data.imsak+"\n"+"terbit : "+res.data.jadwal.data.terbit+"\n"+"subuh : "+res.data.jadwal.data.subuh+"\n"+"dhuha : "+res.data.jadwal.data.dhuha+"\n"+"dzuhur : "+res.data.jadwal.data.dzuhur+"\n"+"ashar : "+res.data.jadwal.data.ashar+"\n"+"maghrib : "+res.data.jadwal.data.maghrib+"\n"+"isya : "+res.data.jadwal.data.isya+"\n"
           msg.reply(pesan); 
          // pesan = "Jadwal Shalat Pekanbaru\n"+"Tanggal : "+res.data.query.tanggal+"\n"+"imsak : "+res.data.jadwal.data.imsak+"\n"+"terbit : "++res.data.jadwal.data.terbit+"\n"+"subuh : "++res.data.jadwal.data.subuh+"\n"+"dhuha : "++res.data.jadwal.data.dhuha+"\n"+"dzuhur : "++res.data.jadwal.data.dzuhur+"\n"+"ashar : "++res.data.jadwal.data.ashar+"\n"+"maghrib : "++res.data.jadwal.data.maghrib+"\n"+"isya : "++res.data.jadwal.data.isya+"\n"
            //  msg.reply(pesan);
