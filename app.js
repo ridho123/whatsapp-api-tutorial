@@ -89,7 +89,7 @@ const db = require('./helpers/db.js');
           //msg.reply(pesan); 
          // pesan = "Jadwal Shalat Pekanbaru\n"+"Tanggal : "+res.data.query.tanggal+"\n"+"imsak : "+res.data.jadwal.data.imsak+"\n"+"terbit : "++res.data.jadwal.data.terbit+"\n"+"subuh : "++res.data.jadwal.data.subuh+"\n"+"dhuha : "++res.data.jadwal.data.dhuha+"\n"+"dzuhur : "++res.data.jadwal.data.dzuhur+"\n"+"ashar : "++res.data.jadwal.data.ashar+"\n"+"maghrib : "++res.data.jadwal.data.maghrib+"\n"+"isya : "++res.data.jadwal.data.isya+"\n"
            //  msg.reply(pesan);
-          msg.reply("OK"+JSON.stringify(res.data.update)); 
+          msg.reply("OK"+JSON.stringify(res.data.update.penambahan)); 
         //  msg.reply(res); 
            // dt=JSON.parse(res.data);
 
