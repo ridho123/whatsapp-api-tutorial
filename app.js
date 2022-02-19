@@ -49,29 +49,7 @@ const db = require('./helpers/db.js');
     },
     session: savedSession
   });
-  client.on('message', msg => {
-        msgHandler(client, msg)
-      })
-  
-async function msgHandler (client, message) {
-  try {
-     let result = message.body.toUpperCase();
-    if (result == '!PING') {
-      message.reply('pong');
-    } else if (result == 'GOOD MORNING' || result == 'SELAMAT PAGI') {
-      message.reply('selamat pagi');
-    } else if(result=='!JADWAL') {
-      var todayDate = new Date().toISOString().slice(0, 10);
-       const respons = await axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/678/tanggal/'+todayDate)
-       const { jadwal } = respons.data
-       pesan = "Jadwal Shalat Tangerang Selatan\n"+"Tanggal : "+jadwal.data.tanggal+"\n"+"imsak : "+jadwal.data.imsak+"\n"+"terbit : "+jadwal.data.terbit+"\n"+"subuh : "+jadwal.data.subuh+"\n"+"dhuha : "+jadwal.data.dhuha+"\n"+"dzuhur : "+jadwal.data.dzuhur+"\n"+"ashar : "+jadwal.data.ashar+"\n"+"maghrib : "+jadwal.data.maghrib+"\n"+"isya : "+jadwal.data.isya+"\n"
-        
-      message.reply(pesan);
-    } 
-  } catch (err) {
-    console.log('error', err)
-  }
-}
+
   client.on('message1', msg => {
     let result = msg.body.toUpperCase();
     if (result == '!PING') {
@@ -80,7 +58,7 @@ async function msgHandler (client, message) {
       msg.reply('selamat pagi');
     } else if(result=='!JADWAL') {
       var todayDate = new Date().toISOString().slice(0, 10);
-       const respons = await axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/678/tanggal/'+todayDate)
+       const respons =  axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/678/tanggal/'+todayDate)
        const { jadwal } = respons.data
        pesan = "Jadwal Shalat Tangerang Selatan\n"+"Tanggal : "+jadwal.data.tanggal+"\n"+"imsak : "+jadwal.data.imsak+"\n"+"terbit : "+jadwal.data.terbit+"\n"+"subuh : "+jadwal.data.subuh+"\n"+"dhuha : "+jadwal.data.dhuha+"\n"+"dzuhur : "+jadwal.data.dzuhur+"\n"+"ashar : "+jadwal.data.ashar+"\n"+"maghrib : "+jadwal.data.maghrib+"\n"+"isya : "+jadwal.data.isya+"\n"
         
