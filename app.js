@@ -85,7 +85,7 @@ const db = require('./helpers/db.js');
         
         axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/608/tanggal/'+today)
         .then(res => {
-          pesan = "Jadwal Shalat Tangerang Selatan\n"+"Tanggal : "+res.data.query.tanggal+"\n"+"imsak : "+res.data.jadwal.data.imsak+"\n"+"terbit : "+res.data.jadwal.data.terbit+"\n"+"subuh : "+res.data.jadwal.data.subuh+"\n"+"dhuha : "+res.data.jadwal.data.dhuha+"\n"+"dzuhur : "+res.data.jadwal.data.dzuhur+"\n"+"ashar : "+res.data.jadwal.data.ashar+"\n"+"maghrib : "+res.data.jadwal.data.maghrib+"\n"+"isya : "+res.data.jadwal.data.isya+"\n"
+          pesan = "Jadwal Shalat Jambi\n"+"Tanggal : "+res.data.query.tanggal+"\n"+"imsak : "+res.data.jadwal.data.imsak+"\n"+"terbit : "+res.data.jadwal.data.terbit+"\n"+"subuh : "+res.data.jadwal.data.subuh+"\n"+"dhuha : "+res.data.jadwal.data.dhuha+"\n"+"dzuhur : "+res.data.jadwal.data.dzuhur+"\n"+"ashar : "+res.data.jadwal.data.ashar+"\n"+"maghrib : "+res.data.jadwal.data.maghrib+"\n"+"isya : "+res.data.jadwal.data.isya+"\n"
          msg.reply(pesan); 
          // msg.reply(res.data.jadwal.data.imsak);
         })
@@ -110,7 +110,7 @@ const db = require('./helpers/db.js');
         
         axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/703/tanggal/'+today)
         .then(res => {
-          pesan = "Jadwal Shalat Tangerang Selatan\n"+"Tanggal : "+res.data.query.tanggal+"\n"+"imsak : "+res.data.jadwal.data.imsak+"\n"+"terbit : "+res.data.jadwal.data.terbit+"\n"+"subuh : "+res.data.jadwal.data.subuh+"\n"+"dhuha : "+res.data.jadwal.data.dhuha+"\n"+"dzuhur : "+res.data.jadwal.data.dzuhur+"\n"+"ashar : "+res.data.jadwal.data.ashar+"\n"+"maghrib : "+res.data.jadwal.data.maghrib+"\n"+"isya : "+res.data.jadwal.data.isya+"\n"
+          pesan = "Jadwal Shalat Jambi\n"+"Tanggal : "+res.data.query.tanggal+"\n"+"imsak : "+res.data.jadwal.data.imsak+"\n"+"terbit : "+res.data.jadwal.data.terbit+"\n"+"subuh : "+res.data.jadwal.data.subuh+"\n"+"dhuha : "+res.data.jadwal.data.dhuha+"\n"+"dzuhur : "+res.data.jadwal.data.dzuhur+"\n"+"ashar : "+res.data.jadwal.data.ashar+"\n"+"maghrib : "+res.data.jadwal.data.maghrib+"\n"+"isya : "+res.data.jadwal.data.isya+"\n"
          msg.reply(pesan); 
          // msg.reply(res.data.jadwal.data.imsak);
         })
@@ -152,7 +152,7 @@ const db = require('./helpers/db.js');
           msg.reply('Error');
         });     
      
-    } else if (result == '!groups') {
+    } else if (result == '!groupsxx') {
       client.getChats().then(chats => {
         const groups = chats.filter(chat => chat.isGroup);
   
@@ -168,7 +168,7 @@ const db = require('./helpers/db.js');
         }
       });
     } else {
-      msg.reply('Selamat Datang di Whatsapp Bot NADIFA\n------------------------------------\n\nSilahkan ketikkan perintah di bawah ini untuk mendapatkan informasi:\n\nCOVID\n\nSHALAT TANGSEL\nSHALAT PEKANBARU\nSHALAT PALEMBANG\nSHALAT JAMBI\nSHALAT PADANG\SHALAT DEPOK \n\n-----------------------');
+      msg.reply('Selamat Datang di Whatsapp Bot NADIFA\n------------------------------------\n\nSilahkan ketikkan perintah di bawah ini untuk mendapatkan informasi:\n\nCOVID\n\nSHALAT TANGSEL\nSHALAT PEKANBARU\nSHALAT PALEMBANG\nSHALAT JAMBI\nSHALAT PADANG\nSHALAT DEPOK \n\n-----------------------');
     }
   });
   
