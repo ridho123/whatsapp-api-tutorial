@@ -68,6 +68,57 @@ const db = require('./helpers/db.js');
         .catch(error => {
           msg.reply('Error');
         });
+     } else if(result=='SHALAT PALEMBANG') {
+        var today = new Date().toISOString().substring(0, 10);
+        
+        axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/622/tanggal/'+today)
+        .then(res => {
+          pesan = "Jadwal Shalat Palembang\n"+"Tanggal : "+res.data.query.tanggal+"\n"+"imsak : "+res.data.jadwal.data.imsak+"\n"+"terbit : "+res.data.jadwal.data.terbit+"\n"+"subuh : "+res.data.jadwal.data.subuh+"\n"+"dhuha : "+res.data.jadwal.data.dhuha+"\n"+"dzuhur : "+res.data.jadwal.data.dzuhur+"\n"+"ashar : "+res.data.jadwal.data.ashar+"\n"+"maghrib : "+res.data.jadwal.data.maghrib+"\n"+"isya : "+res.data.jadwal.data.isya+"\n"
+         msg.reply(pesan); 
+         // msg.reply(res.data.jadwal.data.imsak);
+        })
+        .catch(error => {
+          msg.reply('Error');
+        });
+     } else if(result=='SHALAT JAMBI') {
+        var today = new Date().toISOString().substring(0, 10);
+        
+        axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/608/tanggal/'+today)
+        .then(res => {
+          pesan = "Jadwal Shalat Tangerang Selatan\n"+"Tanggal : "+res.data.query.tanggal+"\n"+"imsak : "+res.data.jadwal.data.imsak+"\n"+"terbit : "+res.data.jadwal.data.terbit+"\n"+"subuh : "+res.data.jadwal.data.subuh+"\n"+"dhuha : "+res.data.jadwal.data.dhuha+"\n"+"dzuhur : "+res.data.jadwal.data.dzuhur+"\n"+"ashar : "+res.data.jadwal.data.ashar+"\n"+"maghrib : "+res.data.jadwal.data.maghrib+"\n"+"isya : "+res.data.jadwal.data.isya+"\n"
+         msg.reply(pesan); 
+         // msg.reply(res.data.jadwal.data.imsak);
+        })
+        .catch(error => {
+          msg.reply('Error');
+        });
+     } else if(result=='SHALAT PADANG') {
+        var today = new Date().toISOString().substring(0, 10);
+        
+        axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/580/tanggal/'+today)
+        .then(res => {
+          pesan = "Jadwal Shalat Padang\n"+"Tanggal : "+res.data.query.tanggal+"\n"+"imsak : "+res.data.jadwal.data.imsak+"\n"+"terbit : "+res.data.jadwal.data.terbit+"\n"+"subuh : "+res.data.jadwal.data.subuh+"\n"+"dhuha : "+res.data.jadwal.data.dhuha+"\n"+"dzuhur : "+res.data.jadwal.data.dzuhur+"\n"+"ashar : "+res.data.jadwal.data.ashar+"\n"+"maghrib : "+res.data.jadwal.data.maghrib+"\n"+"isya : "+res.data.jadwal.data.isya+"\n"
+         msg.reply(pesan); 
+         // msg.reply(res.data.jadwal.data.imsak);
+        })
+        .catch(error => {
+          msg.reply('Error');
+        });
+
+     } else if(result=='SHALAT DEPOK') {
+        var today = new Date().toISOString().substring(0, 10);
+        
+        axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/703/tanggal/'+today)
+        .then(res => {
+          pesan = "Jadwal Shalat Tangerang Selatan\n"+"Tanggal : "+res.data.query.tanggal+"\n"+"imsak : "+res.data.jadwal.data.imsak+"\n"+"terbit : "+res.data.jadwal.data.terbit+"\n"+"subuh : "+res.data.jadwal.data.subuh+"\n"+"dhuha : "+res.data.jadwal.data.dhuha+"\n"+"dzuhur : "+res.data.jadwal.data.dzuhur+"\n"+"ashar : "+res.data.jadwal.data.ashar+"\n"+"maghrib : "+res.data.jadwal.data.maghrib+"\n"+"isya : "+res.data.jadwal.data.isya+"\n"
+         msg.reply(pesan); 
+         // msg.reply(res.data.jadwal.data.imsak);
+        })
+        .catch(error => {
+          msg.reply('Error');
+        });
+
+
      } else if(result=='SHALAT PEKANBARU') {
          var today = new Date().toISOString().substring(0, 10);
         axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/597/tanggal/'+today)
@@ -117,7 +168,7 @@ const db = require('./helpers/db.js');
         }
       });
     } else {
-      msg.reply('Selamat Datang di Whatsapp Bot NADIFA\n------------------------------------\n\nSilahkan ketikkan perintah di bawah ini untuk mendapatkan informasi:\n\nCOVID\n\nSHALAT TANGSEL\nSHALAT PEKANBARU\n\n-----------------------');
+      msg.reply('Selamat Datang di Whatsapp Bot NADIFA\n------------------------------------\n\nSilahkan ketikkan perintah di bawah ini untuk mendapatkan informasi:\n\nCOVID\n\nSHALAT TANGSEL\nSHALAT PEKANBARU\nSHALAT PALEMBANG\nSHALAT JAMBI\nSHALAT PADANG\SHALAT DEPOK \n\n-----------------------');
     }
   });
   
