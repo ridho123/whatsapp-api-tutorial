@@ -9,7 +9,7 @@ const { phoneNumberFormatter } = require('./helpers/formatter');
 const fileUpload = require('express-fileupload');
 const axios = require('axios');
 const port = process.env.PORT || 8000;
-
+const DOMParser = require('xmldom').DOMParser;
 const app = express();
 const server = http.createServer(app);
 const io = socketIO(server);
@@ -183,10 +183,12 @@ const db = require('./helpers/db.js');
             })
             .then(res => {
               const xml = res.data;
-              // const items = xml.getElementsByTagName('key');
-              //var parser = new DOMParser();
-              //var doc = parser.parseFromString(xml, "application/xml");
-               msg.reply("HASIL "+xml);
+             
+                var doc = new DOMParser().parseFromString(
+                    xml
+                    ,'text/xml');
+               var is_success = doc.getElementsByTagName('Session').item(0).firstChild.nodeValue
+               msg.reply("HASIL "+is_success);
             })
             .catch(error => {
               msg.reply('Error');
