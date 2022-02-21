@@ -188,7 +188,7 @@ const db = require('./helpers/db.js');
                     xml
                     ,'text/xml');
              
-             var x = doc.getElementsByTagName('key')[0];
+             var x = doc.getElementsByTagName('key')[0].firstChild.nodeValue;
                      
              msg.reply("HASIL "+ x);
             })
