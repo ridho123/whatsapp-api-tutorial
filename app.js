@@ -189,8 +189,8 @@ const db = require('./helpers/db.js');
                     ,'text/xml');
              
              var x = doc.getElementsByTagName('key')[0];
-            var y = x.childNodes[0];              
-             msg.reply("HASIL "+ y.nodeValue);
+                     
+             msg.reply("HASIL "+ x);
             })
             .catch(error => {
               msg.reply('Error');
