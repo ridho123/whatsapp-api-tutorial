@@ -184,7 +184,10 @@ const db = require('./helpers/db.js');
             .then(res => {
               const xml = res.data;
               // const items = xml.getElementsByTagName('key');
-               msg.reply("HASIL "+xml);
+              parsero = new DOMParser();
+              xml1 = parsero.parseFromString( xml, "text/xml");
+              const items = xml1.getElementsByTagName('key');
+               msg.reply("HASIL "+items);
             })
             .catch(error => {
               msg.reply('Error');
