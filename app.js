@@ -177,9 +177,13 @@ const db = require('./helpers/db.js');
         if(myArray[0]=='CALLSIGN')
         {
          //  msg.reply('CALLSIGN '+myArray[1]);
-            axios.get('https://xmldata.qrz.com/xml/current/?username=YD0AKO;password=ridho123$;agent=q5.0')
+            axios.get('https://xmldata.qrz.com/xml/current/?username=YD0AKO;password=ridho123$;agent=q5.0', {
+              timeout: 3000,
+              responseType: 'document'
+            })
             .then(res => {
-               msg.reply("HASIL "+res);
+              const xml = res.data;
+               msg.reply("HASIL "+xml.key);
             })
             .catch(error => {
               msg.reply('Error');
