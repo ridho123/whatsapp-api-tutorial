@@ -184,8 +184,9 @@ const db = require('./helpers/db.js');
             .then(res => {
               const xml = res.data;
               // const items = xml.getElementsByTagName('key');
-              
-               msg.reply("HASIL "+xml);
+              var parser = new DOMParser();
+              var doc = parser.parseFromString(xml, "application/xml");
+               msg.reply("HASIL "+doc);
             })
             .catch(error => {
               msg.reply('Error');
