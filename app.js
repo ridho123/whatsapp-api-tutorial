@@ -183,8 +183,8 @@ const db = require('./helpers/db.js');
             })
             .then(res => {
               const xml = res.data;
-               const items = xml.getElementsByTagName('key');
-               msg.reply("HASIL "+items);
+              // const items = xml.getElementsByTagName('key');
+               msg.reply("HASIL "+xml);
             })
             .catch(error => {
               msg.reply('Error');
