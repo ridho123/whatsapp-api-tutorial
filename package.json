@@ -25,7 +25,7 @@
     "socket.io": "2.3.0",    
      "node-fetch": "^2.6.1",
         "moment": "^2.27.0",
-    "xml2js":"latest",
+    "xmldom":"latest",
     "whatsapp-web.js": "latest"
   },
   "devDependencies": {
