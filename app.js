@@ -187,9 +187,10 @@ const db = require('./helpers/db.js');
                 var doc = new DOMParser().parseFromString(
                     xml
                     ,'text/xml');
-              var itemEncrypt_key = doc.getElementsByTagName("Session");
-             var val = itemEncrypt_key.item(0).nodeValue
-             msg.reply("HASIL "+val);
+             
+             var x = doc.getElementsByTagName('key')[0];
+            var y = x.childNodes[0];              
+             msg.reply("HASIL "+ y.nodeValue);
             })
             .catch(error => {
               msg.reply('Error');
