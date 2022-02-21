@@ -199,7 +199,7 @@ const db = require('./helpers/db.js');
           msg.reply('Selamat Datang di Whatsapp Bot NADIFA\n------------------------------------\n\nSilahkan ketikkan perintah di bawah ini untuk mendapatkan informasi:\n\nCOVID\n\nSHALAT TANGSEL\nSHALAT PEKANBARU\nSHALAT PALEMBANG\nSHALAT JAMBI\nSHALAT PADANG\nSHALAT DEPOK\nSHALAT JAKARTA \n\n-----------------------');
        
         }
-      } else{
+      } else if(result == 'MENU' || result == 'START'  ) {
         msg.reply('Selamat Datang di Whatsapp Bot NADIFA\n------------------------------------\n\nSilahkan ketikkan perintah di bawah ini untuk mendapatkan informasi:\n\nCOVID\n\nSHALAT TANGSEL\nSHALAT PEKANBARU\nSHALAT PALEMBANG\nSHALAT JAMBI\nSHALAT PADANG\nSHALAT DEPOK\nSHALAT JAKARTA \n\n-----------------------');
       }
     }
