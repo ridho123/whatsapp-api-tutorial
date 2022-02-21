@@ -149,17 +149,7 @@ const db = require('./helpers/db.js');
          var today = new Date().toISOString().substring(0, 10);
         axios.get('https://data.covid19.go.id/public/api/update.json')
         .then(res => {
-          //pesan = "Jadwal Shalat Pekanbaru\n"+"Tanggal : "+res.data.query.tanggal+"\n"+"imsak : "+res.data.jadwal.data.imsak+"\n"+"terbit : "+res.data.jadwal.data.terbit+"\n"+"subuh : "+res.data.jadwal.data.subuh+"\n"+"dhuha : "+res.data.jadwal.data.dhuha+"\n"+"dzuhur : "+res.data.jadwal.data.dzuhur+"\n"+"ashar : "+res.data.jadwal.data.ashar+"\n"+"maghrib : "+res.data.jadwal.data.maghrib+"\n"+"isya : "+res.data.jadwal.data.isya+"\n"
-          //msg.reply(pesan); 
-//.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
-         // pesan = "Jadwal Shalat Pekanbaru\n"+"Tanggal : "+res.data.query.tanggal+"\n"+"imsak : "+res.data.jadwal.data.imsak+"\n"+"terbit : "++res.data.jadwal.data.terbit+"\n"+"subuh : "++res.data.jadwal.data.subuh+"\n"+"dhuha : "++res.data.jadwal.data.dhuha+"\n"+"dzuhur : "++res.data.jadwal.data.dzuhur+"\n"+"ashar : "++res.data.jadwal.data.ashar+"\n"+"maghrib : "++res.data.jadwal.data.maghrib+"\n"+"isya : "++res.data.jadwal.data.isya+"\n"
-           //  msg.reply(pesan);.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
-          msg.reply("Data COVID Indonesia per "+JSON.stringify(res.data.update.penambahan.tanggal)+"\nSumber covid19.go.id\n\nJumlah Positif: *"+JSON.stringify(res.data.update.penambahan.jumlah_positif).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")  +"*\nJumlah Meninggal: *"+JSON.stringify(res.data.update.penambahan.jumlah_meninggal).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") +"*\nJumlah Sembuh: *"+JSON.stringify(res.data.update.penambahan.jumlah_sembuh).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") +"*\nJumlah Dirawat: *"+JSON.stringify(res.data.update.penambahan.jumlah_dirawat).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") +"*\n\nSelalu terapkan 3M ya!");
-        //  msg.reply(res); +JSON.stringify(res.data.update.penambahan.jumlah_positif))
-           // dt=JSON.parse(res.data);
-
-         //  msg.reply("Ok "+res.data.id); 
-         // msg.reply(res.data.update.penambahan.jumlah_positif);
+           msg.reply("Data COVID Indonesia per "+JSON.stringify(res.data.update.penambahan.tanggal)+"\nSumber covid19.go.id\n\nJumlah Positif: *"+JSON.stringify(res.data.update.penambahan.jumlah_positif).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")  +"*\nJumlah Meninggal: *"+JSON.stringify(res.data.update.penambahan.jumlah_meninggal).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") +"*\nJumlah Sembuh: *"+JSON.stringify(res.data.update.penambahan.jumlah_sembuh).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") +"*\nJumlah Dirawat: *"+JSON.stringify(res.data.update.penambahan.jumlah_dirawat).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") +"*\n\nSelalu terapkan 3M ya!");
         })
         .catch(error => {
           msg.reply('Error');
@@ -181,7 +171,26 @@ const db = require('./helpers/db.js');
         }
       });
     } else {
-      msg.reply('Selamat Datang di Whatsapp Bot NADIFA\n------------------------------------\n\nSilahkan ketikkan perintah di bawah ini untuk mendapatkan informasi:\n\nCOVID\n\nSHALAT TANGSEL\nSHALAT PEKANBARU\nSHALAT PALEMBANG\nSHALAT JAMBI\nSHALAT PADANG\nSHALAT DEPOK\nSHALAT JAKARTA \n\n-----------------------');
+      const myArray = result.split(" ");
+      if(myArray.length>0)
+      {
+        if(myArray[0]=='CALLSIGN')
+        {
+         //  msg.reply('CALLSIGN '+myArray[1]);
+            axios.get('https://xmldata.qrz.com/xml/current/?username=YD0AKO;password=ridho123$;agent=q5.0')
+            .then(res => {
+               msg.reply("HASIL "+res);
+            })
+            .catch(error => {
+              msg.reply('Error');
+            });     
+        } else {
+          msg.reply('Selamat Datang di Whatsapp Bot NADIFA\n------------------------------------\n\nSilahkan ketikkan perintah di bawah ini untuk mendapatkan informasi:\n\nCOVID\n\nSHALAT TANGSEL\nSHALAT PEKANBARU\nSHALAT PALEMBANG\nSHALAT JAMBI\nSHALAT PADANG\nSHALAT DEPOK\nSHALAT JAKARTA \n\n-----------------------');
+       
+        }
+      } else{
+        msg.reply('Selamat Datang di Whatsapp Bot NADIFA\n------------------------------------\n\nSilahkan ketikkan perintah di bawah ini untuk mendapatkan informasi:\n\nCOVID\n\nSHALAT TANGSEL\nSHALAT PEKANBARU\nSHALAT PALEMBANG\nSHALAT JAMBI\nSHALAT PADANG\nSHALAT DEPOK\nSHALAT JAKARTA \n\n-----------------------');
+      }
     }
   });
   
