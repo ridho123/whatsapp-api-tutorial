@@ -252,7 +252,7 @@ const db = require('./helpers/db.js');
   }
   
   // Send message
-  app.post('/send-message', [
+  app.get('/send-message', [
     body('number').notEmpty(),
     body('message').notEmpty(),
   ], async (req, res) => {
