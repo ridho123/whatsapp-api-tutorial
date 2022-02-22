@@ -252,7 +252,7 @@ const db = require('./helpers/db.js');
   }
   
   // Send message
-  app.get('/send-message', [
+  app.post('/send-message', [
     body('number').notEmpty(),
     body('message').notEmpty(),
   ], async (req, res) => {
@@ -269,8 +269,8 @@ const db = require('./helpers/db.js');
       });
     }
   
-    const number = phoneNumberFormatter(req.query.number);
-    const message = req.query.message;
+    const number = phoneNumberFormatter(req.body.number);
+    const message = req.body.message;
   
     const isRegisteredNumber = await checkRegisteredNumber(number);
   
