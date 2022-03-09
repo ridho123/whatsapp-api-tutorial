@@ -55,6 +55,101 @@ const db = require('./helpers/db.js');
       msg.reply('pong');
     } else if (result == 'GOOD MORNING' || result == 'SELAMAT PAGI') {
       msg.reply('selamat pagi');
+    } else if(result=='SHALAT TANGSEL') {
+        var today = new Date().toISOString().substring(0, 10);
+        
+        axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/678/tanggal/'+today)
+        .then(res => {
+          pesan = "Jadwal Shalat Tangerang Selatan\n"+"Tanggal : "+res.data.query.tanggal+"\n"+"imsak : "+res.data.jadwal.data.imsak+"\n"+"terbit : "+res.data.jadwal.data.terbit+"\n"+"subuh : "+res.data.jadwal.data.subuh+"\n"+"dhuha : "+res.data.jadwal.data.dhuha+"\n"+"dzuhur : "+res.data.jadwal.data.dzuhur+"\n"+"ashar : "+res.data.jadwal.data.ashar+"\n"+"maghrib : "+res.data.jadwal.data.maghrib+"\n"+"isya : "+res.data.jadwal.data.isya+"\n"
+         msg.reply(pesan); 
+         // msg.reply(res.data.jadwal.data.imsak);
+        })
+        .catch(error => {
+          msg.reply('Error');
+        });
+     } else if(result=='SHALAT PALEMBANG') {
+        var today = new Date().toISOString().substring(0, 10);
+        
+        axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/622/tanggal/'+today)
+        .then(res => {
+          pesan = "Jadwal Shalat Palembang\n"+"Tanggal : "+res.data.query.tanggal+"\n"+"imsak : "+res.data.jadwal.data.imsak+"\n"+"terbit : "+res.data.jadwal.data.terbit+"\n"+"subuh : "+res.data.jadwal.data.subuh+"\n"+"dhuha : "+res.data.jadwal.data.dhuha+"\n"+"dzuhur : "+res.data.jadwal.data.dzuhur+"\n"+"ashar : "+res.data.jadwal.data.ashar+"\n"+"maghrib : "+res.data.jadwal.data.maghrib+"\n"+"isya : "+res.data.jadwal.data.isya+"\n"
+         msg.reply(pesan); 
+         // msg.reply(res.data.jadwal.data.imsak);
+        })
+        .catch(error => {
+          msg.reply('Error');
+        });
+     } else if(result=='SHALAT JAMBI') {
+        var today = new Date().toISOString().substring(0, 10);
+        
+        axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/608/tanggal/'+today)
+        .then(res => {
+          pesan = "Jadwal Shalat Jambi\n"+"Tanggal : "+res.data.query.tanggal+"\n"+"imsak : "+res.data.jadwal.data.imsak+"\n"+"terbit : "+res.data.jadwal.data.terbit+"\n"+"subuh : "+res.data.jadwal.data.subuh+"\n"+"dhuha : "+res.data.jadwal.data.dhuha+"\n"+"dzuhur : "+res.data.jadwal.data.dzuhur+"\n"+"ashar : "+res.data.jadwal.data.ashar+"\n"+"maghrib : "+res.data.jadwal.data.maghrib+"\n"+"isya : "+res.data.jadwal.data.isya+"\n"
+         msg.reply(pesan); 
+         // msg.reply(res.data.jadwal.data.imsak);
+        })
+        .catch(error => {
+          msg.reply('Error');
+        });
+     } else if(result=='SHALAT PADANG') {
+        var today = new Date().toISOString().substring(0, 10);
+        
+        axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/580/tanggal/'+today)
+        .then(res => {
+          pesan = "Jadwal Shalat Padang\n"+"Tanggal : "+res.data.query.tanggal+"\n"+"imsak : "+res.data.jadwal.data.imsak+"\n"+"terbit : "+res.data.jadwal.data.terbit+"\n"+"subuh : "+res.data.jadwal.data.subuh+"\n"+"dhuha : "+res.data.jadwal.data.dhuha+"\n"+"dzuhur : "+res.data.jadwal.data.dzuhur+"\n"+"ashar : "+res.data.jadwal.data.ashar+"\n"+"maghrib : "+res.data.jadwal.data.maghrib+"\n"+"isya : "+res.data.jadwal.data.isya+"\n"
+         msg.reply(pesan); 
+         // msg.reply(res.data.jadwal.data.imsak);
+        })
+        .catch(error => {
+          msg.reply('Error');
+        });
+
+     } else if(result=='SHALAT DEPOK') {
+        var today = new Date().toISOString().substring(0, 10);
+        
+        axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/703/tanggal/'+today)
+        .then(res => {
+          pesan = "Jadwal Shalat Jambi\n"+"Tanggal : "+res.data.query.tanggal+"\n"+"imsak : "+res.data.jadwal.data.imsak+"\n"+"terbit : "+res.data.jadwal.data.terbit+"\n"+"subuh : "+res.data.jadwal.data.subuh+"\n"+"dhuha : "+res.data.jadwal.data.dhuha+"\n"+"dzuhur : "+res.data.jadwal.data.dzuhur+"\n"+"ashar : "+res.data.jadwal.data.ashar+"\n"+"maghrib : "+res.data.jadwal.data.maghrib+"\n"+"isya : "+res.data.jadwal.data.isya+"\n"
+         msg.reply(pesan); 
+         // msg.reply(res.data.jadwal.data.imsak);
+        })
+        .catch(error => {
+          msg.reply('Error');
+        });
+
+     } else if(result=='SHALAT JAKARTA') {
+        var today = new Date().toISOString().substring(0, 10);
+        
+        axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/667/tanggal/'+today)
+        .then(res => {
+          pesan = "Jadwal Shalat Jakarta\n"+"Tanggal : "+res.data.query.tanggal+"\n"+"imsak : "+res.data.jadwal.data.imsak+"\n"+"terbit : "+res.data.jadwal.data.terbit+"\n"+"subuh : "+res.data.jadwal.data.subuh+"\n"+"dhuha : "+res.data.jadwal.data.dhuha+"\n"+"dzuhur : "+res.data.jadwal.data.dzuhur+"\n"+"ashar : "+res.data.jadwal.data.ashar+"\n"+"maghrib : "+res.data.jadwal.data.maghrib+"\n"+"isya : "+res.data.jadwal.data.isya+"\n"
+         msg.reply(pesan); 
+        })
+        .catch(error => {
+          msg.reply('Error');
+        });
+
+
+     } else if(result=='SHALAT PEKANBARU') {
+         var today = new Date().toISOString().substring(0, 10);
+        axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/597/tanggal/'+today)
+        .then(res => {
+          pesan = "Jadwal Shalat Pekanbaru\n"+"Tanggal : "+res.data.query.tanggal+"\n"+"imsak : "+res.data.jadwal.data.imsak+"\n"+"terbit : "+res.data.jadwal.data.terbit+"\n"+"subuh : "+res.data.jadwal.data.subuh+"\n"+"dhuha : "+res.data.jadwal.data.dhuha+"\n"+"dzuhur : "+res.data.jadwal.data.dzuhur+"\n"+"ashar : "+res.data.jadwal.data.ashar+"\n"+"maghrib : "+res.data.jadwal.data.maghrib+"\n"+"isya : "+res.data.jadwal.data.isya+"\n"
+          msg.reply(pesan); 
+        })
+        .catch(error => {
+          msg.reply('Error');
+        });
+      } else if(result=='COVID') {
+         var today = new Date().toISOString().substring(0, 10);
+        axios.get('https://data.covid19.go.id/public/api/update.json')
+        .then(res => {
+           msg.reply("Data COVID Indonesia per "+JSON.stringify(res.data.update.penambahan.tanggal)+"\nSumber covid19.go.id\n\nJumlah Positif: *"+JSON.stringify(res.data.update.penambahan.jumlah_positif).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")  +"*\nJumlah Meninggal: *"+JSON.stringify(res.data.update.penambahan.jumlah_meninggal).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") +"*\nJumlah Sembuh: *"+JSON.stringify(res.data.update.penambahan.jumlah_sembuh).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") +"*\nJumlah Dirawat: *"+JSON.stringify(res.data.update.penambahan.jumlah_dirawat).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,") +"*\n\nSelalu terapkan 3M ya!");
+        })
+        .catch(error => {
+          msg.reply('Error');
+        });     
+     
     }
     /*
     if (msg.body == '!ping') {
