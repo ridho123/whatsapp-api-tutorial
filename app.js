@@ -50,6 +50,13 @@ const db = require('./helpers/db.js');
   });
   
   client.on('message', msg => {
+      result = msg.body.toUpperCase();
+    if (result == 'PING') {
+      msg.reply('pong');
+    } else if (result == 'GOOD MORNING' || result == 'SELAMAT PAGI') {
+      msg.reply('selamat pagi');
+    }
+    /*
     if (msg.body == '!ping') {
       msg.reply('pong');
     } else if (msg.body == 'good morning') {
@@ -70,6 +77,7 @@ const db = require('./helpers/db.js');
         }
       });
     }
+    */
   });
   
   client.initialize();
