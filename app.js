@@ -50,7 +50,6 @@ const db = require('./helpers/db.js');
   });
   
   client.on('message', msg => {
-   
     if (msg.body == '!ping') {
       msg.reply('pong');
     } else if (msg.body == 'good morning') {
@@ -71,7 +70,6 @@ const db = require('./helpers/db.js');
         }
       });
     }
- 
   });
   
   client.initialize();
