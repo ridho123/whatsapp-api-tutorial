@@ -9,7 +9,7 @@ const { phoneNumberFormatter } = require('./helpers/formatter');
 const fileUpload = require('express-fileupload');
 const axios = require('axios');
 const port = process.env.PORT || 8000;
-const DOMParser = require('xmldom').DOMParser;
+//const DOMParser = require('xmldom').DOMParser;
 const app = express();
 const server = http.createServer(app);
 const io = socketIO(server);
@@ -125,7 +125,6 @@ const db = require('./helpers/db.js');
         .then(res => {
           pesan = "Jadwal Shalat Jakarta\n"+"Tanggal : "+res.data.query.tanggal+"\n"+"imsak : "+res.data.jadwal.data.imsak+"\n"+"terbit : "+res.data.jadwal.data.terbit+"\n"+"subuh : "+res.data.jadwal.data.subuh+"\n"+"dhuha : "+res.data.jadwal.data.dhuha+"\n"+"dzuhur : "+res.data.jadwal.data.dzuhur+"\n"+"ashar : "+res.data.jadwal.data.ashar+"\n"+"maghrib : "+res.data.jadwal.data.maghrib+"\n"+"isya : "+res.data.jadwal.data.isya+"\n"
          msg.reply(pesan); 
-         // msg.reply(res.data.jadwal.data.imsak);
         })
         .catch(error => {
           msg.reply('Error');
@@ -138,9 +137,6 @@ const db = require('./helpers/db.js');
         .then(res => {
           pesan = "Jadwal Shalat Pekanbaru\n"+"Tanggal : "+res.data.query.tanggal+"\n"+"imsak : "+res.data.jadwal.data.imsak+"\n"+"terbit : "+res.data.jadwal.data.terbit+"\n"+"subuh : "+res.data.jadwal.data.subuh+"\n"+"dhuha : "+res.data.jadwal.data.dhuha+"\n"+"dzuhur : "+res.data.jadwal.data.dzuhur+"\n"+"ashar : "+res.data.jadwal.data.ashar+"\n"+"maghrib : "+res.data.jadwal.data.maghrib+"\n"+"isya : "+res.data.jadwal.data.isya+"\n"
           msg.reply(pesan); 
-         // pesan = "Jadwal Shalat Pekanbaru\n"+"Tanggal : "+res.data.query.tanggal+"\n"+"imsak : "+res.data.jadwal.data.imsak+"\n"+"terbit : "++res.data.jadwal.data.terbit+"\n"+"subuh : "++res.data.jadwal.data.subuh+"\n"+"dhuha : "++res.data.jadwal.data.dhuha+"\n"+"dzuhur : "++res.data.jadwal.data.dzuhur+"\n"+"ashar : "++res.data.jadwal.data.ashar+"\n"+"maghrib : "++res.data.jadwal.data.maghrib+"\n"+"isya : "++res.data.jadwal.data.isya+"\n"
-           //  msg.reply(pesan);
-        //  msg.reply(res.data.query.kota);
         })
         .catch(error => {
           msg.reply('Error');
@@ -164,19 +160,19 @@ const db = require('./helpers/db.js');
         } else {
           let replyMsg = '*YOUR GROUPS*\n\n';
           groups.forEach((group, i) => {
-            replyMsg += `ID: ${group.id._serialized}\nName: ${group.name}\n\n`;
+            replyMsg += 'ID: ${group.id._serialized}\nName: ${group.name}\n\n';
           });
           replyMsg += '_You can use the group id to send a message to the group._'
           msg.reply(replyMsg);
         }
       });
     } else {
+      /*
       const myArray = result.split(" ");
       if(myArray.length>0)
       {
         if(myArray[0]=='CALLSIGN')
         {
-         //  msg.reply('CALLSIGN '+myArray[1]);
             axios.get('https://xmldata.qrz.com/xml/current/?username=YD0AKO;password=ridho123$;agent=q5.0', {
               timeout: 3000,
               responseType: 'document'
@@ -202,6 +198,7 @@ const db = require('./helpers/db.js');
       } else if(result == 'MENU' || result == 'START'  ) {
         msg.reply('Selamat Datang di Whatsapp Bot NADIFA\n------------------------------------\n\nSilahkan ketikkan perintah di bawah ini untuk mendapatkan informasi:\n\nCOVID\n\nSHALAT TANGSEL\nSHALAT PEKANBARU\nSHALAT PALEMBANG\nSHALAT JAMBI\nSHALAT PADANG\nSHALAT DEPOK\nSHALAT JAKARTA \n\n-----------------------');
       }
+      */
     }
   });
   
