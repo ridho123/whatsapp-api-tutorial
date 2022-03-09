@@ -50,26 +50,7 @@ const db = require('./helpers/db.js');
   });
   
   client.on('message', msg => {
-     result = msg.body.toUpperCase();
-    if (result == 'PING') {
-      msg.reply('pong');
-    } else if (result == 'GOOD MORNING' || result == 'SELAMAT PAGI') {
-      msg.reply('selamat pagi');
-    } else if(result=='SHALAT TANGSEL') {
-        var today = new Date().toISOString().substring(0, 10);
-        
-        axios.get('https://api.banghasan.com/sholat/format/json/jadwal/kota/678/tanggal/'+today)
-        .then(res => {
-          pesan = "Jadwal Shalat Tangerang Selatan\n"+"Tanggal : "+res.data.query.tanggal+"\n"+"imsak : "+res.data.jadwal.data.imsak+"\n"+"terbit : "+res.data.jadwal.data.terbit+"\n"+"subuh : "+res.data.jadwal.data.subuh+"\n"+"dhuha : "+res.data.jadwal.data.dhuha+"\n"+"dzuhur : "+res.data.jadwal.data.dzuhur+"\n"+"ashar : "+res.data.jadwal.data.ashar+"\n"+"maghrib : "+res.data.jadwal.data.maghrib+"\n"+"isya : "+res.data.jadwal.data.isya+"\n"
-         msg.reply(pesan); 
-         // msg.reply(res.data.jadwal.data.imsak);
-        })
-        .catch(error => {
-          msg.reply('Error');
-        });
-     } 
-    
-    /*
+   
     if (msg.body == '!ping') {
       msg.reply('pong');
     } else if (msg.body == 'good morning') {
@@ -90,7 +71,7 @@ const db = require('./helpers/db.js');
         }
       });
     }
-    */
+ 
   });
   
   client.initialize();
